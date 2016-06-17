@@ -1,8 +1,11 @@
 # dbconnect
 
 Simple class to work with mysql.
-Example:
+
+Example
+:
 Initializing:
+
 <?
   $configs = [
         'host' => 'localhost',
