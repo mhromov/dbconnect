@@ -7,11 +7,17 @@ Example
 Initializing:
 
 <?
+  
   $configs = [
+  
         'host' => 'localhost',
+  
         'username' => 'username',
+  
         'password' => 'pass1234',
+  
         'db_name' => 'maindb'
+  
   ];
   
   $db = new DbConnect($configs);
@@ -39,7 +45,9 @@ Initializing:
 
 <?
 
-  $users = $db->get('users',      // Table name
+  $users = $db->get(
+  
+                    'users',      // Table name
   
                     "name='Bob'", // Where string (without word 'Where')
   
