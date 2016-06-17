@@ -26,17 +26,6 @@ class DbConnect
         return $this;
     }
 
-    public static function saveImagef($file, $filename, $new_width = 0, $ext)
-    {
-        if ($_FILES['filename']['tmp_name'] != "") {
-            $result = self::saveImage($file['tmp_name'], $new_width, $filename, $ext);
-        } else {
-            $result['success'] = 0;
-            $result['error'] = 'File tmp_name is empty';
-        }
-        return $result;
-    }
-
     public function printMes()
     {
         if ($this->connect) {
