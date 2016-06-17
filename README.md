@@ -21,11 +21,18 @@ Initializing:
 1) Make a query:
 
 <?
+
+
   $result = $db->query('CREATE TABLE users(id int,name varchar(255),surname varchar(255),email varchar(255),friends_count int);');
+
   /*
+
   $result = ['success' => 1] if there is no error
+
   $result = ['success' => 0, 'error'=>'Some mysql error'] if there is some mysql error
+
   */
+
 ?>
 
 2) Select 
@@ -33,29 +40,52 @@ Initializing:
 <?
 
   $users = $db->get('users',      // Table name
+  
                     "name='Bob'", // Where string (without word 'Where')
+  
                     10,           // Limit
+    
                     'id DESC',    // Order
+    
                     ['name', 'surname'] // Fields to select
   );
+  
                     
+  
   /*
+  
   Example output of $users:
+  
   [
+  
     [
+  
       'id'=>1,
+  
       'name'=>'Bob',
+  
       'email'=>''
+  
     ], 
+  
     [
+  
       'id'=>2,
+  
       'name'=>'Bob',
+  
       'email'=>''
+  
     ]
+  
     
+  
   ] 
   
+  
+  
   OR 
+  
   
   ['success' => 0, 'error'=>'Some mysql error'] 
   if there is some mysql error
